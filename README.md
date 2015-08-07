@@ -2,7 +2,7 @@
 
 ##### _Store Contact Names, Phone Numbers, and Addresses, August 7, 2015_
 
-#### By _**{Chris Lytsell}**_
+#### By _**Chris Lytsell**_
 
 ## Description
 
@@ -10,7 +10,7 @@ _Address Book will take a user's contact information and store it in a nicely fo
 
 ## Setup
 
-_TO MY EPICODUS INSTRUCTORS: I am very unclear what the setup section should include. Do I list the composer stuff? Do I tell all the steps I took to get the thing to work? (Install PHP on my computer, install Composer on my computer, etc.) I guess overall I am unclear on how to take these files I am writing and make them work anywhere. Can someone just copy all these files and throw them on a server, and they work? This is the part of programming - the actual implementation of the program files - that I never quite understood. :-\ _
+TO MY EPICODUS INSTRUCTORS: I am very unclear what the setup section should include. Do I list the composer stuff? Do I tell all the steps I took to get the thing to work? (Install PHP on my computer, install Composer on my computer, etc.) I guess overall I am unclear on how to take these files I am writing and make them work anywhere. Can someone just copy all these files and throw them on a server, and they work? This is the part of programming - the actual implementation of the program files - that I never quite understood. :-\
 
 ## Technologies Used
 
@@ -18,7 +18,7 @@ _PHP, Twig, Silex, Bootstrap_
 
 ### Legal
 
-Copyright (c) 2015 **_{List of contribtors}_**
+Copyright (c) 2015 **_Chris Lytsell_**
 
 This software is licensed under the MIT license.
 
