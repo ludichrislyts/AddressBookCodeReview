@@ -4,7 +4,6 @@ class Contact
 	public $name;
 	public $phone_number;
 	public $address;
-}
 
     function __construct($name, $phone_number, $address)
     {
@@ -18,7 +17,7 @@ class Contact
         $this->name = $new_name;
     }
 
-    function getname()
+    function getName()
     {
         return $this->name;
     }
@@ -32,7 +31,7 @@ class Contact
     {
         return $this->phone_number;
     }
-    
+
     function setAddress($new_address)
     {
         $this->address = $new_address;
@@ -57,3 +56,4 @@ class Contact
     {
         $_SESSION['list_of_contacts'] = array();
     }
+}
