@@ -5,10 +5,10 @@
     session_start();
 
     //initialize $_SESSION array to hold contacts
-    if (empty($_SESSION['list_of_contacts']))
-    {
-        $_SESSION['list_of_contacts'] = array();
-    }
+    // if (empty($_SESSION['list_of_contacts']))
+    // {
+    //     $_SESSION['list_of_contacts'] = array();
+    // }
 
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'
@@ -19,11 +19,19 @@
     });
     // create_contact page -- Confirms contact add, displays contact info
     $app->post('/create_contact', function() use ($app){
+        $contact = new Contact($_POST['name'], $_POST['phone_number'], $_POST['address']);
+        $contact->save();
         return $app['twig']->render('create_contact.html.twig', array('new_contact' => $contact));
     });
     // delete_contacts page -- Clears contact list, confirms clear
     $app->post('delete_contacts', function() use ($app){
-        return $app['twig']->render('delete_contacts.html.twig');
+        Contact::deleteAll();
+        if (empty($_SESSION['list_of_contacts'])){
+            return $app['twig']->render('delete_contacts.html.twig');
+        }
+        else {
+            return $app['twig']->render('delete_error.html.twig', array('undeleted_contacts' => Contact::getAll()));
+        }
     });
 
     return $app;

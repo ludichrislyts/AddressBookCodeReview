@@ -17,20 +17,25 @@
         <!-- Add contact form -->
         <div class='container'>
             <h2>Add A Contact To Your Address Book</h2>
-            <form action='/create_contact'>
+            <form action='/create_contact' method='post'>
                 <div class='form-group'>
                     <label for='name'>Contact Name</label>
                     <input id='name' name='name' class='form-control' type='text'>
                 </div>
                 <div class='form-group'>
-                    <label for='phone_number'>Contact Name</label>
+                    <label for='phone_number'>Contact Phone Number</label>
                     <input id='phone_number' name='phone_number' class='form-control' type='text'>
                 </div>
                 <div class='form-group'>
-                    <label for='address'>Contact Name</label>
+                    <label for='address'>Contact Address</label>
                     <input id='address' name='address' class='form-control' type='text'>
                 </div>
                 <p><button type='submit' class='btn-primary'>Add Contact</button></p>
+            </form>
+            <hr>
+            <!--button to delete all contacts -->
+            <form action='/delete_contacts' method='post'>
+                <button type='submit' class="btn-danger">Clear All Contacts</button>
             </form>
         </div>
 

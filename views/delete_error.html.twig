@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Error</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <body>
+        <h2>These Contacts Were Not Deleted!</h2>
+        {% if undeleted_contacts is not empty %}
+            <ul>
+                {% for contact in undeleted_contacts %}
+                    <li>{{ contact.getName }}</li>
+                    <li>{{ contact.getPhoneNumber }}</li>
+                    <li>{{ contact.getAddress }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p><a href='/'>Home<a></p>
+    </body>
+</html>
