@@ -7,14 +7,15 @@
         {% if contacts is not empty %}
             <ul>
                 {% for contact in contacts %}
-                    <li>{{ contact.getName }}</li>
-                    <li>{{ contact.getPhoneNumber }}</li>
-                    <li>{{ contact.getAddress }}</li>
+                    <h4><li>{{ contact.getName }}</li></h4>
+                    <ul>
+                        <li>{{ contact.getPhoneNumber }}</li>
+                        <li>{{ contact.getAddress }}</li>
+                    </ul>
                 {% endfor %}
             </ul>
         {% endif %}
 
-        <!-- Add contact form -->
         <div class='container'>
             <h2>Add A Contact To Your Address Book</h2>
             <form action='/create_contact' method='post'>
@@ -33,7 +34,7 @@
                 <p><button type='submit' class='btn-primary'>Add Contact</button></p>
             </form>
             <hr>
-            <!--button to delete all contacts -->
+
             <form action='/delete_contacts' method='post'>
                 <button type='submit' class="btn-danger">Clear All Contacts</button>
             </form>

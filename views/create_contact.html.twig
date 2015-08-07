@@ -3,12 +3,16 @@
         <title>Add Contact</title>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
     <body>
-        <h2>You created a contact!</h2>
-        <ul>
-            <li>{{ new_contact.getName }}</li>
-            <li>{{ new_contact.getPhoneNumber }}</li>
-            <li>{{ new_contact.getAddress }}</li>
-        </ul>
-        <p><a href='/'>View Address Book<a></p>
+        <div class='container'>
+            <h2>You created a contact!</h2>
+            <ul>
+                <h4><li>{{ new_contact.getName }}</li></h4>
+                <ul>
+                    <li>{{ new_contact.getPhoneNumber }}</li>
+                    <li>{{ new_contact.getAddress }}</li>
+                </ul>
+            </ul>
+            <p><a href='/'>View Address Book<a></p>
+        </div>
     </body>
 </html>

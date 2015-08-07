@@ -5,10 +5,10 @@
     session_start();
 
     //initialize $_SESSION array to hold contacts
-    // if (empty($_SESSION['list_of_contacts']))
-    // {
-    //     $_SESSION['list_of_contacts'] = array();
-    // }
+    if (empty($_SESSION['list_of_contacts']))
+    {
+        $_SESSION['list_of_contacts'] = array();
+    }
 
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'
@@ -26,12 +26,15 @@
     // delete_contacts page -- Clears contact list, confirms clear
     $app->post('delete_contacts', function() use ($app){
         Contact::deleteAll();
-        if (empty($_SESSION['list_of_contacts'])){
-            return $app['twig']->render('delete_contacts.html.twig');
-        }
-        else {
-            return $app['twig']->render('delete_error.html.twig', array('undeleted_contacts' => Contact::getAll()));
-        }
+        //UNCOMMENT THIS SECTION TO TEST /delete_error.html.twig page
+        //$test_empty_array_contact = new Contact('Chris', '666-666-6666', 'Nowhere');
+        //$test_empty_array_contact->save();
+        //==========================================*/
+        return $app['twig']->render('delete_contacts.html.twig', array('lingering_contacts' => Contact::getAll()));
+    });
+    // delete_error page -- displays if after delete, contacts still exist
+    $app->get('delete_error', function() use ($app){
+        return $app['twig']->render('delete_error.html.twig');
     });
 
     return $app;

@@ -4,7 +4,24 @@
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
     </head>
     <body>
-        <h2>Address Book Cleared!</h2>
-        <p><a href='/'>Home</a></p>
+        {% if lingering_contacts is not empty %}
+            <div class='container'>
+                <h1>THESE CONTACTS WERE NOT DELETED!</h1>
+                {% for contact in lingering_contacts %}
+                    <ul>
+                        <h2><li>{{ contact.getName }}</li></h2>
+                        <ul>
+                            <h3><li>{{ contact.getPhoneNumber }}</li></h3>
+                            <h3><li>{{ contact.getAddress }}</li></h3>
+                        </ul>
+                    </ul>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class='container'>
+                <h2>Address Book Cleared!</h2>
+                <p><a href='/'>Home</a></p>
+            </div>
+        {% endif %}
     </body>
 </html>
